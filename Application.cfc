@@ -9,9 +9,6 @@ component extends="framework.one"{
 	variables.framework={
 		reloadApplicationOnEveryRequest	= true,
 		error = "user.error"
-	// 	unhandledExtensions = 'cfc',
-	//  unhandledPaths	= "/#sSiteName#/dashboard/model/tests,/#sSiteName#/dashboard/remote,/#sSiteName#/dashboard/assets/js,/#sSiteName#/dashboard/util",
-	//  napplicationKey = 'com.strakertranslations.translator.dashboard',
 		};
 
 
