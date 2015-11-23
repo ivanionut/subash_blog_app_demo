@@ -8,7 +8,7 @@
 
 	<cffunction name="list" returnType="query" access="public" output="false" hint="I return a list of blog entries">
 
-		<cfset qReturn = "">
+		<cfset var qReturn = "">
 		<cfset qReturn = blogDAO.list()>
 		<cfreturn qReturn>
 
@@ -16,12 +16,24 @@
 
 	<!--- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --->
 
-	<cffunction name="getpost" returnType="query" access="public" output="false" hint="I return posts">
+	<cffunction name="getPost" returnType="query" access="public" output="false" hint="I return posts">
 		<cfargument name="id"	type="numeric" required="true" hint="I am the id of the post" displayname="id" />
 
-		<cfset qPost = "">
+		<cfset var qPost = "">
 		<cfset qPost = blogDAO.getpost(arguments.id)>
 		<cfreturn qPost>
+
+	</cffunction>
+
+	<!--- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --->
+
+	<cffunction name="updatePost" returnType="boolean" hint="I edit a post">
+		<cfargument name="id" 		type="numeric" required="true" hint="I am the id of the post" displayname="id" />
+		<cfargument name="content" 	type="string" required="true" hint="I am the content to be updated" displayname="content" />
+
+		<cfset var qUpdate = "">
+		<cfset qUpdate = blogDAO.updatePost(arguments.id, arguments.content)>
+		<cfreturn qUpdate>
 
 	</cffunction>
 

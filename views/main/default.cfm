@@ -1,10 +1,7 @@
-<h3 class="list-group-item active">Blog Entries</h3>
-<cfoutput query="rc.qReturn">
-	<ul class="list-unstyled">
-		<li>
-			<h3 class="list-group-item" style="padding-top:0px;">
-				<a href="#buildURL('main.getPost?id=#rc.qReturn.id#')#" class="list-group-ite" ><br>#rc.qReturn.currentrow#. #rc.qReturn.post_title#</a>
-			</h3>
-		</li>
-	</ul>
-</cfoutput>
+<cfset rc.title = "Default View" />	<!--- set a variable to be used in a layout --->
+<p>This is the default view for My Account</p>
+<!--- use the named result from the service call --->
+<!--- <p>This page was rendered on <cfoutput>#rc.today#</cfoutput>.</p> --->
+
+<!---
+<cflocation url = "#buildURL('user.userlogin')#" addToken = "no"> --->

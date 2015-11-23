@@ -40,4 +40,25 @@
 
 	<!--- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --->
 
+	<cffunction name="updatePost" returntype="boolean" hint="I return blog posts">
+		<cfargument name="id" 		type="numeric" required="true" hint="I am the id of the post" displayname="id" />
+		<cfargument name="content" 	type="string" required="true" hint="I am the content to be updated" displayname="content" />
+
+		<cfset var qUpdate = "">
+
+		<cfquery name="qUpdate" result="updateResult">
+			Update 		tbl_posts
+			set 		post_content 	= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.content#">
+			WHERE 		id 				= <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.id#">
+		</cfquery>
+
+		<cfif updateResult.recordcount gt 0>
+			<cfset qUpdate = true>
+		</cfif>
+		<cfreturn qUpdate>
+
+	</cffunction>
+
+	<!--- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --->
+
 </cfcomponent>

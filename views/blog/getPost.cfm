@@ -1,5 +1,7 @@
-<cfset rc.heading = "Entry">
-<div  style="background-color: ##99CCFF;padding:10px;">
-	<cfoutput>#rc.qPost.post_content#</cfoutput>
+<cfoutput>
+<h3 class="list-group-item">Post</h3>
+<div  style="padding:10px;">
+	#rc.qPost.post_content#
 </div>
-<a href="index.cfm"><br/>Go Back</a>
+<a href="#buildUrl('blog.list')#"><br/>Go Back</a>
+</cfoutput>

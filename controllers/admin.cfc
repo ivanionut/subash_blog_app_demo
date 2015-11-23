@@ -21,13 +21,17 @@
 
 		/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-		function getPost( rc ) {
+		function edit( rc ) {
 			rc.qPost = blogService.getPost(rc.id);
 		}
 
 		<!--- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --->
 
-		function editPost(rc){
+		function save(rc){
+			rc.qUpdate = blogService.updatePost(rc.id, rc.content);
+			if(rc.qUpdate = true){
+				variables.fw.redirect('admin.edit?id=#rc.id#&sMessage=Successfully Updated !!!');
+			}
 		}
 
 		<!--- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --->

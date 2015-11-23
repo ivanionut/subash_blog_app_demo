@@ -12,6 +12,7 @@
 		##wrap {
 			width: 600px;
 			margin: 0 auto;
+			padding:10px;
 		}
 		##login{
 			width: 300px;
@@ -20,7 +21,7 @@
 	</style>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid" id="container">
 		<div id="wrap">
 		<div class="page-header">
 			<h1 class="text-center neon" style="font-size: 150px; color:Orange;"><strong>B</strong><sup>log</sup><small style="font-size:20px;">Express Yourself</small> </h1>
